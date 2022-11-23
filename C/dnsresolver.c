@@ -4,9 +4,19 @@
 
 int main (int argc, char *argv[]) {
   
-  struct hostent *alvo = gethostbyname(argv[1]);
-  
-  printf("IP: %s\n", inet_ntoa(*((struct in_addr *)alvo->h_addr)));
+  if(argc <= 1) {
+    printf("Modo de uso: ./dnsresolver www.google.com\n");
+  } 
+  else {
 
+    struct hostent *alvo = gethostbyname(argv[1]);
+
+    if(alvo == NULL) {
+      printf("Ocorreu um erro\n");
+    }
+    else {
+      printf("IP: %s\n", inet_ntoa(*((struct in_addr *)alvo->h_addr)));
+    }
   return 0;
+  }
 }
