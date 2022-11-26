@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 
-import socket
+import socket,sys
 
-ip = "37.59.174.225"
+ip = sys.argv[1]
 
 for porta in range(1,1024):
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
