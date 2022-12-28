@@ -10,4 +10,4 @@ for palavra in $(cat $2);
 do
   host $palavra.$1 | grep -v "NXDOMAIN"
 done
-
+fi
